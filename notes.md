@@ -15,3 +15,15 @@ They are:
 - Scoped to this specific workflow run
 - Available for download by other jobs in the same run
 - Downloadable manually from the "Actions" tab in the GitHub UI
+
+#### Job Outputs?
+
+job outputs are values that a job can produce and pass to other jobs in the same workflow.
+They are used when you want to:
+- 🔁 Pass data from one job to another (e.g., a version number, file path, build URL)
+- 🚦 Make conditional decisions in downstream jobs
+- 💡 Share information without needing to write/read files or artifacts
+
+Basic Concept:
+- One job sets an output
+- Another job that needs: it can read that output using ${{ needs.job_id.outputs.output_name }}
